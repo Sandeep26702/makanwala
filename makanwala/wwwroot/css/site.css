@@ -1,0 +1,214 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* Custom Styles */
+:root {
+    --red: #dc3545;
+}
+
+.hero-section {
+    background: linear-gradient(to right, #fff, #f8f9fa);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: var(--red) !important;
+}
+
+.btn-danger {
+    background-color: var(--red);
+    border-color: var(--red);
+}
+
+.search-form .form-control {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.search-form .btn {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+/* Auth Pages Styling */
+.auth-card {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+    .auth-card .card-body {
+        padding: 2rem;
+    }
+
+    .auth-card h2 {
+        color: var(--red);
+        margin-bottom: 1.5rem;
+    }
+
+    .auth-card .form-control {
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .auth-card .btn {
+        padding: 0.75rem;
+    }
+
+/* About Page Styles */
+.about-page .hero-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.about-page section {
+    padding: 4rem 0;
+}
+
+.team-member-card {
+    transition: transform 0.3s;
+}
+
+    .team-member-card:hover {
+        transform: translateY(-5px);
+    }
+
+/ /* Top Offers Page Styles */
+.top-offers-page {
+    padding-top: 56px; /* Offset for fixed navbar */
+}
+
+.hero-banner {
+    background: linear-gradient(rgba(220, 53, 69, 0.9), rgba(220, 53, 69, 0.9)), url('/images/top-offers-bg.jpg') center/cover;
+    padding: 5rem 0;
+}
+
+.property-card {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .property-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .property-card .card-img-top {
+        height: 220px;
+        object-fit: cover;
+    }
+
+.features span {
+    margin-right: 15px;
+    font-size: 0.9rem;
+}
+
+.features i {
+    margin-right: 5px;
+    color: var(--red);
+}
+
+.filter-bar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1020;
+}
+
+/* Ensure Font Awesome icons work */
+.fas, .fab {
+    font-family: 'Font Awesome 6 Free';
+}
+
+/* Property Details Page Styles */
+.property-details-page {
+    padding-top: 56px;
+}
+
+.main-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.thumbnail {
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+    .thumbnail:hover {
+        transform: scale(1.03);
+    }
+
+.features i {
+    color: var(--red);
+    width: 20px;
+    text-align: center;
+}
+
+.amenities li {
+    margin-bottom: 8px;
+}
+
+.agent-info img {
+    border: 3px solid var(--red);
+}
+
+.sticky-top {
+    z-index: 1019;
+}
+
+/* Make price stand out */
+.text-danger {
+    color: var(--red) !important;
+    font-weight: 700;
+}
+
+/* Contact Page Styles */
+.contact-page {
+    padding-top: 56px; /* Offset for fixed navbar */
+}
+
+.contact-header {
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('/images/contact-bg.jpg') center/cover;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.contact-form .card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.contact-info .rounded {
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+    .contact-info .rounded:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+
+.contact-info i {
+    margin-bottom: 15px;
+}
