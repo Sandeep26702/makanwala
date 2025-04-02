@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "_AdminLayout";
+}
+
+<div class="row g-4">
+    <!-- Stats Cards -->
+    <div class="col-md-3">
+        <div class="card dashboard-card bg-primary text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="card-title">Total Properties</h6>
+                        <h2 class="mb-0">142</h2>
+                    </div>
+                    <i class="bi bi-house-door fs-1"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card dashboard-card bg-success text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="card-title">Active Listings</h6>
+                        <h2 class="mb-0">87</h2>
+                    </div>
+                    <i class="bi bi-check-circle fs-1"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card dashboard-card bg-warning text-dark">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="card-title">Pending Approvals</h6>
+                        <h2 class="mb-0">12</h2>
+                    </div>
+                    <i class="bi bi-clock fs-1"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card dashboard-card bg-danger text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="card-title">New Messages</h6>
+                        <h2 class="mb-0">23</h2>
+                    </div>
+                    <i class="bi bi-envelope fs-1"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Properties Table -->
+    <div class="col-12 mt-4">
+        <div class="card">
+            <div class="card-header bg-white">
+                <h5 class="mb-0">Recent Properties</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Type</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#RE-001</td>
+                                <td>Luxury Villa in Goa</td>
+                                <td>Villa</td>
+                                <td>₹4.5 Cr</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="tooltip" title="Edit">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger ms-1" data-bs-toggle="tooltip" title="Delete">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
