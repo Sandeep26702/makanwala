@@ -1,0 +1,45 @@
+﻿@model List<Property>
+@{
+    ViewData["Title"] = "Manage Properties";
+    Layout = "_AdminLayout";
+}
+
+<div class="d-flex justify-content-between mb-4">
+    <h2>Property Listings</h2>
+    <a asp-action="AddProperty" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> Add Property
+    </a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>City</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var property in Model)
+        {
+            <tr>
+                <td>@property.Id</td>
+                <td>@property.Title</td>
+                <td>₹@property.Price.ToString("N0")</td>
+                <td>@property.City</td>
+                <td>@property.Type</td>
+                <td>
+                    <a asp-action="EditProperty" asp-route-id="@property.Id" class="btn btn-sm btn-warning">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                    <a asp-action="DeleteProperty" asp-route-id="@property.Id" class="btn btn-sm btn-danger">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

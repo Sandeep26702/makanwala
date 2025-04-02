@@ -6,34 +6,63 @@ namespace makanwala.Controllers
 {
     public class AdminController : Controller
     {
+    // Static list to store properties (temporary replacement for database)
+    private static List<Property> _properties = new List<Property>
+    {
+        new Property { Id = 1, Title = "Luxury Villa", Price = 45000000, City = "Goa", Type = PropertyType.House },
+        new Property { Id = 2, Title = "Modern Apartment", Price = 22000000, City = "Mumbai", Type = PropertyType.Apartment }
+    };
+
         public IActionResult Dashboard()
         {
-            // Add your dashboard statistics logic here
             return View();
         }
 
+        // GET: Properties List
         public IActionResult Properties()
         {
-            // Add properties management logic
+            return View(_properties);
+        }
+
+        // GET: Add Property Form
+        public IActionResult AddProperty()
+        {
             return View();
         }
 
-        public IActionResult Categories()
+        // POST: Add Property
+        [HttpPost]
+        public IActionResult AddProperty(Property property)
         {
-            // Add categories management logic
-            return View();
+            property.Id = _properties.Count + 1;
+            _properties.Add(property);
+            return RedirectToAction("Properties");
         }
 
-        public IActionResult Users()
+        // GET: Edit Property
+        public IActionResult EditProperty(int id)
         {
-            // Add users management logic
-            return View();
+            var property = _properties.FirstOrDefault(p => p.Id == id);
+            if (property == null) return NotFound();
+            return View(property);
         }
 
-        public IActionResult Messages()
+        // POST: Update Property
+        [HttpPost]
+        public IActionResult EditProperty(Property updatedProperty)
         {
-            // Add contact messages logic
-            return View();
+            var index = _properties.FindIndex(p => p.Id == updatedProperty.Id);
+            if (index != -1)
+            {
+                _properties[index] = updatedProperty;
+            }
+            return RedirectToAction("Properties");
+        }
+
+        // Delete Property
+        public IActionResult DeleteProperty(int id)
+        {
+            _properties.RemoveAll(p => p.Id == id);
+            return RedirectToAction("Properties");
         }
     }
-}

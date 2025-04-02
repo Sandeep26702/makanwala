@@ -9,18 +9,18 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-Add after AddControllersWithViews()
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
-});
+//Add after AddControllersWithViews()
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+//});
 
-Configure Identity
-builder.Services.AddDefaultIdentity<IdentityUser>(options => {
-    options.SignIn.RequireConfirmedAccount = false;
-})
-.AddRoles<IdentityRole>() // Enable roles
-.AddEntityFrameworkStores<ApplicationDbContext>();
+//Configure Identity
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => {
+//    options.SignIn.RequireConfirmedAccount = false;
+//})
+//.AddRoles<IdentityRole>() // Enable roles
+//.AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 // Configure the HTTP request pipeline.
@@ -41,5 +41,11 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "admin",
+    pattern: "admin/{action=Dashboard}/{id?}",
+    defaults: new { controller = "Admin" });
+
+
 
 app.Run();
