@@ -1,26 +1,19 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using makanwala.Areas.Identity.Data;
 
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("UserDBContextConnection") ?? throw new InvalidOperationException("Connection string 'UserDBContextConnection' not found.");
+
+builder.Services.AddDbContext<UserDBContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<makanwalaUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<UserDBContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
-//Add after AddControllersWithViews()
-//builder.Services.AddAuthorization(options =>
-//{
-//    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
-//});
-
-//Configure Identity
-//builder.Services.AddDefaultIdentity<IdentityUser>(options => {
-//    options.SignIn.RequireConfirmedAccount = false;
-//})
-//.AddRoles<IdentityRole>() // Enable roles
-//.AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 // Configure the HTTP request pipeline.
@@ -36,6 +29,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();  //  Ensure authentication is used before authorization
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -47,5 +41,5 @@ app.MapControllerRoute(
     defaults: new { controller = "Admin" });
 
 
-
+app.MapRazorPages();
 app.Run();
