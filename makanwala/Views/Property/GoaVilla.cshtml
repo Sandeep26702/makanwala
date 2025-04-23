@@ -1,36 +1,249 @@
 ﻿@{
-    ViewData["Title"] = "Luxury Villa (Goa)";
+    ViewData["Title"] = "Luxury Goa Villa | Premium Beachfront Property";
 }
 
 <div class="container py-5">
-    <h1>Luxury Sea-Facing Villa</h1>
-    <p class="text-muted"><i class="fas fa-map-marker-alt"></i> Goa</p>
-
     <div class="row">
-        <div class="col-md-8">
-            <!-- मुख्य इमेज -->
-            <img src="/images/goa-villa.jpg" class="img-fluid rounded mb-4" alt="Goa Villa">
+        <!-- Property Image and Details -->
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm mb-4">
+                <img src="/images/a1.jpg" class="card-img-top rounded-top" alt="Luxury Goa Villa">
+                <div class="card-body">
+                    <h1 class="card-title display-6">Luxury Sea-Facing Villa</h1>
+                    <p class="text-muted mb-4">
+                        <i class="fas fa-map-marker-alt text-danger"></i> <strong>Goa, India</strong>
+                    </p>
 
-            <!-- डिस्क्रिप्शन -->
-            <div class="mb-5">
-                <h4>Description</h4>
-                <p>Premium beachfront villa with private pool, jacuzzi, and stunning ocean views.</p>
+                    <div class="property-highlights mb-4">
+                        <h4 class="mb-3"><i class="fas fa-star text-warning"></i> Property Highlights</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-swimming-pool text-primary me-2"></i> Private Infinity Pool</li>
+                                    <li class="mb-2"><i class="fas fa-umbrella-beach text-primary me-2"></i> Beachfront Access</li>
+                                    <li class="mb-2"><i class="fas fa-spa text-primary me-2"></i> Jacuzzi & Spa</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-utensils text-primary me-2"></i> Gourmet Kitchen</li>
+                                    <li class="mb-2"><i class="fas fa-wifi text-primary me-2"></i> High-Speed WiFi</li>
+                                    <li class="mb-2"><i class="fas fa-car text-primary me-2"></i> Private Parking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="property-description">
+                        <h4 class="mb-3"><i class="fas fa-align-left text-primary me-2"></i> Description</h4>
+                        <p class="lead">Experience unparalleled luxury in this exquisite beachfront villa offering breathtaking ocean views from every room.</p>
+                        <p>This 5-bedroom masterpiece features contemporary Goan architecture with traditional elements, state-of-the-art amenities, and direct access to a pristine private beach. The property includes a temperature-controlled infinity pool, outdoor dining pavilion, and 24/7 security.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-4">
-            <!-- प्राइस और डिटेल्स -->
-            <div class="card shadow-sm">
+        <!-- Booking and Payment Section -->
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm sticky-top" style="top: 20px;">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0"><i class="fas fa-tag me-2"></i> Pricing Details</h4>
+                </div>
                 <div class="card-body">
-                    <h4 class="card-title">₹4.5 Cr</h4>
-                    <ul class="list-unstyled">
-                        <li><strong>Beds:</strong> 5</li>
-                        <li><strong>Baths:</strong> 4</li>
-                        <li><strong>Area:</strong> 4500 sq.ft</li>
-                    </ul>
-                    <a href="/Property" class="btn btn-danger w-100">Back to Listings</a>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="text-success mb-0">₹4.5 Cr</h2>
+                        <span class="badge bg-danger">Premium Listing</span>
+                    </div>
+
+                    <div class="property-features mb-4">
+                        <div class="row text-center">
+                            <div class="col-4 border-end">
+                                <div class="display-6">5</div>
+                                <div class="text-muted small">Beds</div>
+                            </div>
+                            <div class="col-4 border-end">
+                                <div class="display-6">4</div>
+                                <div class="text-muted small">Baths</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="display-6">4500</div>
+                                <div class="text-muted small">Sq.ft</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="payment-options">
+                        <button type="button" class="btn btn-success btn-lg w-100 mb-3" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                            <i class="fas fa-credit-card me-2"></i> Book Now
+                        </button>
+
+                        <button type="button" class="btn btn-outline-primary w-100 mb-3" data-bs-toggle="modal" data-bs-target="#inquiryModal">
+                            <i class="fas fa-envelope me-2"></i> Enquire Now
+                        </button>
+
+                        <a href="/Property" class="btn btn-outline-secondary w-100">
+                            <i class="fas fa-arrow-left me-2"></i> Back to Properties
+                        </a>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-shield-alt text-success me-2"></i>
+                            <span class="small">Secure Payment Processing</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-lock text-success me-2"></i>
+                            <span class="small">256-bit SSL Encryption</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Payment Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title"><i class="fas fa-credit-card me-2"></i> Secure Payment</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i> You're booking: <strong>Luxury Goa Villa</strong>
+                </div>
+
+                <form id="paymentForm">
+                    <div class="mb-3">
+                        <label class="form-label">Total Amount</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light">₹</span>
+                            <input type="text" class="form-control fw-bold" value="4,50,00,000" readonly>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Payment Method</label>
+                        <div class="list-group">
+                            <label class="list-group-item">
+                                <input class="form-check-input me-2" type="radio" name="paymentMethod" checked>
+                                <i class="fab fa-cc-visa text-primary me-2"></i> Credit/Debit Card
+                            </label>
+                            <label class="list-group-item">
+                                <input class="form-check-input me-2" type="radio" name="paymentMethod">
+                                <i class="fas fa-mobile-alt text-info me-2"></i> UPI Payment
+                            </label>
+                            <label class="list-group-item">
+                                <input class="form-check-input me-2" type="radio" name="paymentMethod">
+                                <i class="fas fa-university text-success me-2"></i> Net Banking
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3" id="cardDetails">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label">Card Number</label>
+                                <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Expiry Date</label>
+                                <input type="text" class="form-control" placeholder="MM/YY">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">CVV</label>
+                                <input type="text" class="form-control" placeholder="123">
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Cardholder Name</label>
+                                <input type="text" class="form-control" placeholder="Full Name">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="fas fa-lock me-2"></i> Pay ₹4.5 Cr Securely
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <img src="https://via.placeholder.com/80x50?text=VISA" alt="Visa" class="mx-2">
+                <img src="https://via.placeholder.com/80x50?text=MC" alt="Mastercard" class="mx-2">
+                <img src="https://via.placeholder.com/80x50?text=UPI" alt="UPI" class="mx-2">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Inquiry Modal -->
+<div class="modal fade" id="inquiryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-info text-white">
+                <h5 class="modal-title"><i class="fas fa-envelope me-2"></i> Property Inquiry</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="inquiryForm">
+                    <div class="mb-3">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="3" placeholder="Any specific questions about this property?"></textarea>
+                    </div>
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-info btn-lg text-white">
+                            <i class="fas fa-paper-plane me-2"></i> Send Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        // Payment method toggle
+        $('input[name="paymentMethod"]').change(function () {
+            if ($(this).parent().text().includes('Card')) {
+                $('#cardDetails').show();
+            } else {
+                $('#cardDetails').hide();
+            }
+        });
+
+        // Form submission handlers
+        $('#paymentForm').submit(function (e) {
+            e.preventDefault();
+            // Process payment here
+            alert('Payment processing would happen here in a real implementation');
+        });
+
+        $('#inquiryForm').submit(function (e) {
+            e.preventDefault();
+            // Send inquiry here
+            alert('Inquiry would be sent in a real implementation');
+            $('#inquiryModal').modal('hide');
+        });
+    </script>
+}

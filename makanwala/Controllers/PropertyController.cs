@@ -4,23 +4,21 @@ namespace makanwala.Controllers;
 public class PropertyController : Controller
 {
     // Goa Villa Details
-    public IActionResult GoaVilla()
+    public IActionResult GoaVilla() 
     {
-        ViewData["Title"] = "Luxury Sea-Facing Villa";
-        return View();
+        return View(); // Looks for "GoaVilla.cshtml" in /Views/Property/
     }
 
     // Mumbai Penthouse Details
-    public IActionResult MumbaiPenthouse()
+    public IActionResult MumbaiPenthouse() // Must match view name
     {
-        ViewData["Title"] = "Penthouse with City View";
-        return View();
+        return View(); // Looks in /Views/Property/ first
     }
 
     // Bangalore Farmhouse Details
     public IActionResult BangaloreFarmhouse()
     {
-        ViewData["Title"] = "Luxury Farm House";
+       
         return View();
     }
 }

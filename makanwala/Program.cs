@@ -1,6 +1,8 @@
+﻿
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using makanwala.Areas.Identity.Data;
+using makanwala.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,9 @@ builder.Services.AddDefaultIdentity<makanwalaUser>(options => options.SignIn.Req
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AppuserDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("UserDBContextConnection")));
 
 var app = builder.Build();
 
@@ -35,6 +40,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// Simple and clean route configuration
 app.MapControllerRoute(
     name: "admin",
     pattern: "admin/{action=Dashboard}/{id?}",
